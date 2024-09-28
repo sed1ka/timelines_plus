@@ -337,6 +337,8 @@ class FixedTimeline extends StatelessWidget {
     this.theme,
     this.direction,
     this.mainAxisSize = MainAxisSize.max,
+    this.mainAxisAlignment = MainAxisAlignment.center,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
     this.textDirection,
     this.verticalDirection = VerticalDirection.down,
     this.clipBehavior = Clip.none,
@@ -377,6 +379,10 @@ class FixedTimeline extends StatelessWidget {
   /// there will be no remaining free space to maximize or minimize, making this
   /// value irrelevant to the final layout.
   final MainAxisSize mainAxisSize;
+
+  final MainAxisAlignment mainAxisAlignment;
+
+  final CrossAxisAlignment crossAxisAlignment;
 
   /// Determines the order to lay children out horizontally and how to interpret
   /// `start` and `end` in the horizontal direction.
@@ -420,6 +426,8 @@ class FixedTimeline extends StatelessWidget {
     Widget result = Flex(
       direction: direction,
       mainAxisSize: mainAxisSize,
+      mainAxisAlignment: mainAxisAlignment,
+      crossAxisAlignment: crossAxisAlignment,
       textDirection: textDirection,
       verticalDirection: verticalDirection,
       clipBehavior: clipBehavior,
